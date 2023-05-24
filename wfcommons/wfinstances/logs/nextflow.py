@@ -180,7 +180,7 @@ def _parse_task_name(task_name: str):
     :return: Formatted task name
     :rtype: str
     """
-    return task_name[task_name.rfind(':') + 1:].replace('(', '').replace(')', '').replace(' ', '_').lower()
+    return task_name
 
 
 def _parse_number(number: str):
