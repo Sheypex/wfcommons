@@ -76,7 +76,7 @@ class NextflowLogsParser(LogsParser):
         trace_data = self._read_data('execution_report_*.html')
 
         for t in trace_data['trace']:
-            task_id = "ID{:06d}".format(int(t['task_id']))
+            task_id = str(t['task_id'])
             category = t['process'].lower().split(' ')[0]
             category = _parse_task_name(category)
             task_name = _parse_task_name(t['name'])
