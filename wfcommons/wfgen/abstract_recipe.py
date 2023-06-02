@@ -7,7 +7,7 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-
+import functools
 import logging
 import uuid
 
@@ -184,6 +184,7 @@ class WorkflowRecipe(ABC):
         self.task_id_counter += 1
         return task_name
 
+    @functools.cache
     def _generate_task_files(self, task: Task) -> List[File]:
         """
         Generate input and output files for a task.
