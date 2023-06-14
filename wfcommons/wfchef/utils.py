@@ -65,7 +65,7 @@ def create_graph(path: pathlib.Path) -> nx.DiGraph:
                 graph.add_node(task["name"], label=_type, type=_type, id=str(id_count))
                 id_count += 1
             else:
-                _type = re.fullmatch(r"(.*?)( \(.*?\))?", task["name"]).group(1)
+                _type = task["name"]  # re.fullmatch(r"(.*?)( \(.*\))?", task["name"]).group(1)
                 _id = task["id"]
                 graph.add_node(task["name"], label=_type, type=_type, id=_id)
 
