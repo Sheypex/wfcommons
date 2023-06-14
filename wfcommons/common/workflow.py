@@ -120,7 +120,7 @@ class Workflow(nx.DiGraph):
             },
             "workflow": {
                 "executedAt": self.executed_at,
-                "makespanInSeconds": self.makespan,
+                "makespan": self.makespan,
                 "tasks": workflow_tasks
             }
         }
