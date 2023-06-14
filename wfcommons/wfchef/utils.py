@@ -66,7 +66,7 @@ def create_graph(path: pathlib.Path) -> nx.DiGraph:
                 id_count += 1
             else:
                 try:
-                    _type, _ = re.match(r"(.*?)( \(.*?\))?", task["name"]).group(1)
+                    _type = re.match(r"(.*?)( \(.*?\))?", task["name"]).group(1)
                     _id = task["id"]
                 except ValueError:
                     _type, _id = task["name"].split("_0")
