@@ -11,6 +11,7 @@
 import glob
 import json
 import pathlib
+import re
 
 from logging import Logger
 from typing import Dict, Optional
@@ -180,7 +181,7 @@ def _parse_task_name(task_name: str):
     :return: Formatted task name
     :rtype: str
     """
-    return task_name
+    return re.fullmatch(r"(.*?)( \(.*?\))?",task_name).group(1)
 
 
 def _parse_number(number: str):
